@@ -1,0 +1,23 @@
+{
+  "name": "news_express",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "cheerio": "^0.17.0",
+    "cookie-parser": "~1.0.1",
+    "debug": "~0.7.4",
+    "express": "~4.2.0",
+    "feedparser": "^0.19.1",
+    "jade": "~1.3.0",
+    "morgan": "~1.0.0",
+    "static-favicon": "~1.0.0",
+    "swig": "^1.4.2",
+    "underscore": "^1.7.0",
+    "urlencode": "^0.2.0",
+    "valid-url": "^1.0.9"
+  }
+}

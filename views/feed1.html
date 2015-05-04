@@ -1,0 +1,29 @@
+{% extends 'layout.view.html' %}
+
+{% block content %}
+
+<a href="javascript:history.back();">Back</a>
+
+<h2>{{ feedName }}</h2>
+
+<ul>
+{% for episode in episodes %}
+  <li{% if loop.first %} class="first"{% endif %}>
+
+   <a href="{{ episode.newUrl }}" target="_blank">{{ episode.title }}</a><br/>
+  {{ episode.newUrl }}<br/>
+
+    <strong>Count:</strong> {{episode.count}} | <strong>Posted:</strong> {{episode.date.toString();}} <br/>
+    <a href="https://twitter.com/share?text={{ episode.title2 }}&url={{ episode.newUrl }}" class="twitter-share-button" data-lang="en" data-url="{{ episode.newUrl }}">Tweet</a>
+    <script type="IN/Share" data-url="{{ episode.newUrl }}" data-counter="right"></script>
+    <div class="g-plus" data-action="share" data-annotation="bubble" data-href="{{ episode.newUrl }}"></div>
+<!--     <span class='st_twitter_large' displayText='Tweet'></span>
+  <span class='st_linkedin_large' displayText='LinkedIn'></span>
+  <span class='st_email_large' displayText='Email'></span> -->
+
+  </li>
+{% endfor %}
+</ul>
+
+<a href="javascript:history.back();">Back</a>
+{% endblock %}

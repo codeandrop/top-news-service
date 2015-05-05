@@ -1,9 +1,11 @@
+'use strict';
+
 var express = require('express');
-var router = express.Router();
+var router = new express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res) {
-  res.send('respond with a resource');
+    res.send('respond with a resource');
 });
 
 module.exports = router;

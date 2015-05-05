@@ -37,4 +37,6 @@ pids
 *.seed
 
 node_modules
+bower_components
+public/components
 test/tmp

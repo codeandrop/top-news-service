@@ -1,6 +1,6 @@
 'use strict';
 
-var Promise = require('promise');
+var PromisePolyfill = require('Promise');
 var rssParser = require('../modules/rssParser');
 var twitterCount = require('../modules/twitterCount');
 
@@ -38,15 +38,15 @@ function renderPage() {
 }
 
 function getCountAllItems() {
-    return Promise.all(
-        rssObject.items.map(function(element, index, array) {
+    return PromisePolyfill.all(
+        rssObject.items.map(function(element) {
             return twitterCount.getCount(element.newUrl);
         })
     );
 }
 
 function addCountAllItems(countValues) {
-    rssObject.items.map(function(element, index, array) {
+    rssObject.items.map(function(element, index) {
         element.count = countValues[index];
     });
 }

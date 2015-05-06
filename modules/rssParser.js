@@ -3,7 +3,7 @@
 var cheerio = require('cheerio');
 var FeedParser = require('FeedParser');
 var http = require('http');
-var Promise = require('promise');
+var PromisePolyfill = require('Promise');
 var urlEncode = require('urlEncode');
 
 // TODO: Add JSdoc
@@ -29,12 +29,11 @@ exports.parseRss = function(rssUrl) {
       items: []
     };
 
-    return new Promise(function(resolve, reject) {
+    return new PromisePolyfill(function(resolve, reject) {
         http.get(rssUrl, function(resGet) {
             resGet.pipe(new FeedParser({}))
                 .on('error', function(error) {
-                    var message = 'HTTP failure while fetching feed';
-                    reject(message);
+                    reject(error.message);
                 })
                 .on('meta', function(meta) {
                     responseObject.title = meta.title;
@@ -67,8 +66,8 @@ exports.parseRss = function(rssUrl) {
                     resolve(responseObject);
                 });
         })
-        .on('error', function(e) {
-            reject(e.message);
+        .on('error', function(error) {
+            reject(error.message);
         });
     });
 };

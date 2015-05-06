@@ -1,6 +1,6 @@
 'use strict';
 
-var Promise = require('promise');
+var PromisePolyfill = require('Promise');
 var http = require('http');
 
 var twitterCountURL = 'http://urls.api.twitter.com/1/urls/count.json?url=';
@@ -10,7 +10,7 @@ var twitterCountURL = 'http://urls.api.twitter.com/1/urls/count.json?url=';
 // TODO: Add JSdoc
 
 exports.getCount = function(validUrl) {
-    return new Promise(function(resolve, reject) {
+    return new PromisePolyfill(function(resolve, reject) {
         http.get(twitterCountURL + validUrl, function(res) {
             var body = '';
             res.on('data', function(chunk) {

@@ -1,11 +1,12 @@
 'use strict';
 
 var gulp = require('gulp'),
-  $ = require('gulp-load-plugins')(),
+  gulpLoadPlugins = require('gulp-load-plugins'),
+  plugins = gulpLoadPlugins(),
   browserSync = require('browser-sync'),
-  nodemon = require('gulp-nodemon'),
-  sass = require('gulp-sass'),
-  eslint = require('gulp-eslint'),
+  // nodemon = require('gulp-nodemon'),
+  // sass = require('gulp-sass'),
+  // eslint = require('gulp-eslint'),
   reload = browserSync.reload,
   BROWSER_SYNC_RELOAD_DELAY = 500;
 
@@ -17,27 +18,27 @@ gulp.task('lint', function () {
     // .pipe(reload({stream: true, once: true}))
     // eslint() attaches the lint output to the eslint property
     // of the file object so it can be used by other modules.
-    .pipe(eslint())
+    .pipe(plugins.eslint())
     // eslint.format() outputs the lint results to the console.
     // Alternatively use eslint.formatEach() (see Docs).
-    .pipe(eslint.format())
+    .pipe(plugins.eslint.format())
     // To have the process exit with an error code (1) on
     // lint error, return the stream and pipe to failOnError last.
-    .pipe(eslint.failOnError());
+    .pipe(plugins.eslint.failOnError());
 });
 
 // // Lint JavaScript
 // gulp.task('jshint', function () {
 //   return gulp.src('app/scripts/**/*.js')
 //     .pipe(reload({stream: true, once: true}))
-//     .pipe($.jshint())
-//     .pipe($.jshint.reporter('jshint-stylish'))
-//     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+//     .pipe(plugins.jshint())
+//     .pipe(plugins.jshint.reporter('jshint-stylish'))
+//     .pipe(plugins.if(!browserSync.active, gulpLoadPlugins.jshint.reporter('fail')));
 // });
 
 gulp.task('sass', function () {
   return gulp.src('public/stylesheets/style.scss')
-    .pipe(sass())
+    .pipe(plugins.sass())
     .pipe(gulp.dest('public/stylesheets'))
     .pipe(reload({stream: true}));
 });
@@ -62,7 +63,7 @@ gulp.task('browser-sync', ['lint', 'sass', 'nodemon'], function() {
 
 gulp.task('nodemon', ['lint'] ,function (cb) {
   var called = false;
-	return nodemon({
+	return plugins.nodemon({
 	  script: 'app.js',
     // tasks: ['browser-sync'],
     // tasks: ['lint'],

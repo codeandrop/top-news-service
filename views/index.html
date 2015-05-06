@@ -1,17 +1,14 @@
 {% extends 'layout.view.html' %}
 
 {% block content %}
+<div class="table-of-contents">
 <h2>{{ pagename }}</h2>
-<a href="/feed/6">Mix of All of the Above</a><br/>
-<a href="/feed/5">Front Page</a><br/>
-<a href="/feed/8">Marketing</a><br/>
-<a href="/feed/9">Good News :)</a><br/>
-<a href="/feed/7">Entrepreneur World</a><br/>
-<a href="/feed/1">Technology</a><br/>
-<a href="/feed/2">Science</a><br/>
-<a href="/feed/3">Environment</a><br/>
-<a href="/feed/4">User Experience (UX)</a><br/>
-<a href="/feed/10">Montreal</a><br/>
-<a href="/feed/11">Quebec</a><br/>
-
+<a href="/feed/6" class="btn btn-primary">Mix of All of the Above</a><br/>
+<a href="/feed/5" class="btn btn-success">Front Page</a><br/>
+<a href="/feed/1" class="btn btn-info">Technology</a><br/>
+<a href="/feed/2" class="btn btn-warning">Science</a><br/>
+<a href="/feed/3" class="btn btn-danger">Environment</a><br/>
+<a href="/feed/8" class="btn btn-primary">Marketing</a><br/>
+<a href="/feed/9" class="btn btn-success">Good News :)</a><br/>
+</div>
 {% endblock %}

@@ -10,7 +10,10 @@ var gulp = require('gulp'),
   BROWSER_SYNC_RELOAD_DELAY = 500;
 
 gulp.task('lint', function () {
-  return gulp.src(['app.js',  'routes/**/*.*',  'public/javascripts/**/*.*'])
+  return gulp.src(['app.js',
+                   'routes/**/*.*',
+                   'modules/**/*.*',
+                   'public/javascripts/**/*.*'])
     // .pipe(reload({stream: true, once: true}))
     // eslint() attaches the lint output to the eslint property
     // of the file object so it can be used by other modules.

@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var swig = require('swig');
 var routes = require('./routes/index');
-var users = require('./routes/users');
+// var users = require('./routes/users');
 var feed = require('./routes/feed');
 var app = express();
 
@@ -30,8 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
-app.use('/users2', users);
+// app.use('/users', users);
 app.get('/feed/:feedUrl', feed.parse);
 
 // catch 404 and forward to error handler

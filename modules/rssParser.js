@@ -3,8 +3,8 @@
 var cheerio = require('cheerio');
 var FeedParser = require('feedparser');
 var http = require('http');
-var PromisePolyfill = require('Promise');
-var urlEncode = require('urlEncode');
+var PromisePolyfill = require('promise');
+var urlEncode = require('urlencode');
 
 
 

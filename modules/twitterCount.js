@@ -1,6 +1,6 @@
 'use strict';
 
-var PromisePolyfill = require('Promise');
+var PromisePolyfill = require('promise');
 var http = require('http');
 
 var twitterCountURL = 'http://urls.api.twitter.com/1/urls/count.json?url=';

@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/codeandrop/top-news-service.svg?branch=master)](https://travis-ci.org/codeandrop/top-news-service)
-[![Code Climate](https://codeclimate.com/github/codeandrop/top-news-service/badges/gpa.svg)](https://codeclimate.com/github/codeandrop/top-news-service) 
+[![Code Climate](https://codeclimate.com/github/codeandrop/top-news-service/badges/gpa.svg)](https://codeclimate.com/github/codeandrop/top-news-service) [![Test Coverage](https://codeclimate.com/github/codeandrop/top-news-service/badges/coverage.svg)](https://codeclimate.com/github/codeandrop/top-news-service/coverage)
 
 # Top News Service
 

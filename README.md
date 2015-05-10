@@ -1,4 +1,5 @@
-[![Code Climate](https://codeclimate.com/github/codeandrop/top-news-service/badges/gpa.svg)](https://codeclimate.com/github/codeandrop/top-news-service)
+[![Build Status](https://travis-ci.org/codeandrop/top-news-service.svg?branch=master)](https://travis-ci.org/codeandrop/top-news-service)
+[![Code Climate](https://codeclimate.com/github/codeandrop/top-news-service/badges/gpa.svg)](https://codeclimate.com/github/codeandrop/top-news-service) 
 
 # Top News Service
 

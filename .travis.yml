@@ -3,3 +3,8 @@ language: node_js
 node_js:
   - '0.12'
   - '0.10'
+addons:
+  code_climate:
+    repo_token: b32d20c78aa8c04597b1fb4432802dc32b2cd3fdeb7a1fb48e64e258b9050037
+after_script:
+  - codeclimate < lcov.info

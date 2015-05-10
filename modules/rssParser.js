@@ -1,7 +1,7 @@
 'use strict';
 
 var cheerio = require('cheerio');
-var FeedParser = require('feedParser');
+var FeedParser = require('feedparser');
 var http = require('http');
 var PromisePolyfill = require('Promise');
 var urlEncode = require('urlEncode');

@@ -6,8 +6,15 @@ var http = require('http');
 var PromisePolyfill = require('Promise');
 var urlEncode = require('urlEncode');
 
-// TODO: Add JSdoc
 
+
+// TODO: Refactor methods, validurl
+
+/**
+  * Extracts a valid url from the RSS Feed Item, taking into account exception urls
+  * @param {string} content - the item to be analyzed
+  * @returns {string} - the valid url inside the item
+*/
 function getValidURL(content) {
     var $ = cheerio.load(content),
       responseUrl;
@@ -21,6 +28,11 @@ function getValidURL(content) {
     return responseUrl;
 }
 
+/**
+  * Parses a RSS stream into an Object
+  * @param {string} rssUrl - RSS url to fetch the stream
+  * @returns {Object} - the Object with meta and item information
+*/
 exports.parseRss = function(rssUrl) {
     var responseObject = {
       title: '',

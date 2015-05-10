@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Science</title>
+    <link>http://www.reddit.com/r/science/</link>
+    <description>The Science subreddit is a place to share new findings. Read about the latest advances in astronomy, biology, medicine, physics and the social sciences. Find and submit the best writeup on the web about a discovery, and make sure it cites its sources.</description>
+    <image>
+      <url>http://www.reddit.com/sBJfjQft_8pqDRBA.png</url>
+      <title>Science</title>
+      <link>http://www.reddit.com/r/science/</link>
+    </image>
+    <atom:link rel="self" href="http://www.reddit.com/r/science/.rss" type="application/rss+xml" />
+    <item>
+      <title>Scientists bred extremely sexually attractive male mosquitoes whose offspring are unable to breed. So these mosquitoes will hopefully dominate the mosquito gene pool, and in a generation or two, billions of mosquito larvae will be reproductive dead-ends.</title>
+      <link>http://www.reddit.com/r/science/comments/35bozp/scientists_bred_extremely_sexually_attractive/</link>
+      <guid isPermaLink="true">http://www.reddit.com/r/science/comments/35bozp/scientists_bred_extremely_sexually_attractive/</guid>
+      <pubDate>Fri, 08 May 2015 19:48:11 +0000</pubDate>
+      <description>submitted by <a href="http://www.reddit.com/user/ScaldingHotSoup"> ScaldingHotSoup </a> <br/> <a href="http://www.sciencedaily.com/releases/2015/05/150508110526.htm">[link]</a> <a href="http://www.reddit.com/r/science/comments/35cbqq/master_growth_factor_identified_a_single_protein/">[25 comments]</a></description>
+    </item>
+    <item>
+      <title>Double blind study finds no evidence for aspartame sensitivity. &quot;Acute ingestion of aspartame does not have any detectable psychological or metabolic effects in humans.&quot;</title>
+      <link>http://www.reddit.com/r/science/comments/35aktv/double_blind_study_finds_no_evidence_for/</link>
+      <guid isPermaLink="true">http://www.reddit.com/r/science/comments/35aktv/double_blind_study_finds_no_evidence_for/</guid>
+      <pubDate>Fri, 08 May 2015 14:26:23 +0000</pubDate>
+      <description>submitted by <a href="http://www.reddit.com/user/drewiepoodle"> drewiepoodle </a> <br/> <a href="http://www.iflscience.com/health-and-medicine/scientists-restore-sight-blind-mice">[link]</a> <a href="http://www.reddit.com/r/science/comments/35b5r7/scientists_have_been_able_to_return_daylight/">[52 comments]</a></description>
+    </item>
+    <item>
+      <title>High energy particles at center of Milky Way now within scope of Large Hadron Collider</title>
+      <link>http://www.reddit.com/r/science/comments/35as1q/high_energy_particles_at_center_of_milky_way_now/</link>
+      <guid isPermaLink="true">http://www.reddit.com/r/science/comments/35as1q/high_energy_particles_at_center_of_milky_way_now/</guid>
+      <pubDate>Fri, 08 May 2015 15:25:49 +0000</pubDate>
+      <description>submitted by <a href="http://www.reddit.com/user/drewiepoodle"> drewiepoodle </a> <br/> <a href="http://www.reddit.com/r/science/comments/35bbbt/the_urban_poor_in_the_united_states_are/">[51 comments]</a></description>
+    </item>
+  </channel>
+</rss>

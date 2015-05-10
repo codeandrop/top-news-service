@@ -57,6 +57,21 @@ gulp.task('mochaTest', ['jshint', 'lint'], function () {
       }));
 });
 
+gulp.task('coverage', ['mochaTest'], function (cb) {
+    gulp.src([paths.js[1], paths.js[4], paths.js[5], paths.js[6]])
+      .pipe(plugins.istanbul()) // Covering files
+      .pipe(plugins.istanbul.hookRequire()) // Force `require` to return covered files
+      .on('finish', function () {
+          gulp.src(paths.js[2], {read: false})
+            .pipe(plugins.mocha({
+              reporter: 'spec'
+            }))
+            .pipe(plugins.istanbul.writeReports()) // Creating the reports after tests runned
+            .pipe(plugins.istanbul.enforceThresholds({ thresholds: { global: 80 } })) // Enforce a coverage of at least 90%
+            .on('end', cb);
+      });
+});
+
 gulp.task('browser-sync', ['mochaTest', 'sass', 'nodemon'], function() {
     browserSync.init({
       proxy: 'http://localhost:5000',

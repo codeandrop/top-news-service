@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
 var browserSync = require('browser-sync');
+
 var plugins = gulpLoadPlugins(),
   reload = browserSync.reload,
   BROWSER_SYNC_RELOAD_DELAY = 500,
@@ -15,9 +16,7 @@ var plugins = gulpLoadPlugins(),
     sass: ['public/stylesheets/*.scss'],
     publicPath: ['public/**/*.*']};
 
-
 // TODO: Define env variables and ports globally
-
 
 gulp.task('lint', function () {
     return gulp.src(paths.js)

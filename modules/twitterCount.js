@@ -14,19 +14,25 @@ var twitterCountURL = 'http://urls.api.twitter.com/1/urls/count.json?url=';
  * @returns {Number} Number of tweets
 */
 exports.getCount = function(validUrl) {
+    var body = '',
+      twResponse = {};
+
     return new PromisePolyfill(function(resolve, reject) {
         if (validUrl) {
             http.get(twitterCountURL + validUrl, function(res) {
-                var body = '';
                 res.on('data', function(chunk) {
                     body += chunk;
                 });
                 res.on('end', function() {
-                    var twResponse = JSON.parse(body);
-                    if (!twResponse.count) {
+                    try {
+                        twResponse = JSON.parse(body);
+                        if (!twResponse.count || twResponse.count === null) {
+                            twResponse.count = 0;
+                        }
+                    }catch(err) {
                         twResponse.count = 0;
                     }
-                    // console.log(twResponse.count);
+
                     resolve(twResponse.count);
                 });
 

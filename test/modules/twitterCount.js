@@ -62,4 +62,53 @@ describe('twitterCount Module', function() {
 
         twitterCount.getCount('').should.eventually.equal(0).notify(done);
     });
+
+    it('should return 0 when an empty json response is passed', function(done) {
+        var expected = {'count': '', 'url': 'www.google.com'};
+
+        response.write(JSON.stringify(expected));
+        response.end();
+
+        http.get.callsArgWith(1, response)
+                .returns(responsePT);
+
+        twitterCount.getCount('www.google.com').should.eventually.equal(0).notify(done);
+    });
+
+    it('should return 0 when an null count response is passed', function(done) {
+        var expected = {'count': null, 'url': 'www.google.com'};
+
+        response.write(JSON.stringify(expected));
+        response.end();
+
+        http.get.callsArgWith(1, response)
+                .returns(responsePT);
+
+        twitterCount.getCount('www.google.com').should.eventually.equal(0).notify(done);
+    });
+
+    it('should return 0 when an undefined count response is passed', function(done) {
+        var emptyCount,
+          expected = {'count': emptyCount, 'url': 'www.google.com'};
+
+        response.write(JSON.stringify(expected));
+        response.end();
+
+        http.get.callsArgWith(1, response)
+                .returns(responsePT);
+
+        twitterCount.getCount('www.google.com').should.eventually.equal(0).notify(done);
+    });
+
+    it('should return 0 when an invalid json response is passed', function(done) {
+        var expected = '[1, 2, 3, 4, ]';
+
+        response.write(expected);
+        response.end();
+
+        http.get.callsArgWith(1, response)
+                .returns(responsePT);
+
+        twitterCount.getCount('www.google.com').should.eventually.equal(0).notify(done);
+    });
 });

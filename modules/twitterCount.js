@@ -20,6 +20,7 @@ exports.getCount = function(validUrl) {
     return new PromisePolyfill(function(resolve, reject) {
         if (validUrl) {
             http.get(twitterCountURL + validUrl, function(res) {
+                // console.log(res);
                 res.on('data', function(chunk) {
                     body += chunk;
                 });

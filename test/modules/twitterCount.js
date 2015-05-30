@@ -111,4 +111,21 @@ describe('twitterCount Module', function() {
 
         twitterCount.getCount('www.google.com').should.eventually.equal(0).notify(done);
     });
+
+
+    it('should return rejected promise when an error is emitted in stream response', function(done) {
+        var expected = {'count': '', 'url': 'www.google.com'},
+          expectedError = 'unknown error 1';
+
+        response.write(JSON.stringify(expected));
+        response.end();
+
+        http.get.callsArgWith(1, response)
+                .returns(responsePT);
+
+        twitterCount.getCount('www.google.com').should.be.rejectedWith(expectedError).notify(done);
+
+        responsePT.emit('error', {message: expectedError});
+
+    });
 });

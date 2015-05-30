@@ -107,4 +107,26 @@ describe('rssParser Module', function() {
             done();
         });
     });
+
+    it('should return rejected promise when an error is emitted in stream response', function(done) {
+        var data = fs.readFileSync('test/fixtures/rssResponse1.xml', 'utf8'),
+        expectedError = 'unknown error 1';
+
+        response.write(data);
+        response.end();
+
+        http.get.callsArgWith(1, response)
+                .returns(responsePT);
+
+        rssParser.parseRss('http://www.reddit.com/r/emptyresponse/.rss')
+                .then(function() {
+                    // Not returning a valid responseObject, should catch the error
+                }, function(error) {
+                    error.should.equal(expectedError);
+                    done();
+                });
+
+        responsePT.emit('error', {message: expectedError});
+
+    });
 });

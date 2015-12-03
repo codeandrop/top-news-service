@@ -3,7 +3,7 @@
 
 # Top News Service
 
-Node JS Application that reads reddit news and order them by twitter count.
+Node JS Application that reads reddit news and order them by facebook count.
 
 # Installation
 

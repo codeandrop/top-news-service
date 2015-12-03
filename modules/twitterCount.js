@@ -3,7 +3,8 @@
 var PromisePolyfill = require('promise');
 var http = require('http');
 
-var twitterCountURL = 'http://urls.api.twitter.com/1/urls/count.json?url=';
+// var twitterCountURL = 'http://urls.api.twitter.com/1/urls/count.json?url=';
+var twitterCountURL = 'http://graph.facebook.com/?id=';
   // DEFAULT_TIMEOUT = 1000;
 
 // TODO: Add timeout to every call, check if validUrl is null return null
@@ -27,13 +28,15 @@ exports.getCount = function(validUrl) {
                 res.on('end', function() {
                     try {
                         twResponse = JSON.parse(body);
-                        if (!twResponse.count || twResponse.count === null) {
+                        twResponse.count = twResponse.shares;
+                        // console.log(twResponse);
+                        if (!twResponse.shares || twResponse.shares === null) {
                             twResponse.count = 0;
                         }
-                    }catch(err) {
+                    }catch (err) {
                         twResponse.count = 0;
                     }
-
+                    // console.log(twResponse.count);
                     resolve(twResponse.count);
                 });
 

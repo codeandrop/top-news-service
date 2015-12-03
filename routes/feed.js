@@ -23,6 +23,8 @@ var serverRes,
     'http://www.reddit.com/r/Entrepreneur+smallbusiness+startups+marketing+business.rss',
     'http://www.reddit.com/r/Marketing+webmarketing.rss',
     'http://www.reddit.com/r/goodnews+goodnewseveryone+upliftingnews.rss',
+    'http://www.reddit.com/r/programming.rss',
+    'http://www.reddit.com/r/javascript.rss',
     'http://www.reddit.com/r/montreal.rss',
     'http://www.reddit.com/r/Quebec.rss'
 ];

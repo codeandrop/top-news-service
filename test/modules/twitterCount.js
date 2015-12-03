@@ -28,7 +28,7 @@ describe('twitterCount Module', function() {
     });
 
     it('should return valid count when a valid url is passed', function(done) {
-        var expected = {'count': 234453234, 'url': 'http:\/\/www.google.com\/'};
+        var expected = {'shares': 234453234, 'url': 'http:\/\/www.google.com\/'};
 
         response.write(JSON.stringify(expected));
         response.end();
@@ -40,7 +40,7 @@ describe('twitterCount Module', function() {
     });
 
     it('should return 0 when a invalid url is passed', function(done) {
-        var expected = {'count': 0, 'url': 'http:\/\/invalidurl.invalid\/'};
+        var expected = {'shares': 0, 'url': 'http:\/\/invalidurl.invalid\/'};
 
         response.write(JSON.stringify(expected));
         response.end();
@@ -52,7 +52,7 @@ describe('twitterCount Module', function() {
     });
 
     it('should return 0 when an empty url is passed', function(done) {
-        var expected = {'count': 0, 'url': ''};
+        var expected = {'shares': 0, 'url': ''};
 
         response.write(JSON.stringify(expected));
         response.end();
